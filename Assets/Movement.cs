@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody rb;
-    [SerializeField] float mainThrust = 9000f;
+    [SerializeField] float mainThrust = 9001f;
     [SerializeField] float rotationThrust = 1f;
     // Start is called before the first frame update
     void Start()
