@@ -1,25 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision other) 
+  private void OnCollisionEnter(Collision other) 
     {
-        switch (other.gameObject.tag)
+      switch (other.gameObject.tag)
         {
-            case "Friendly":
+          case "Friendly":
               Debug.Log("This is friendly");
               break;
-            case "Finish":
+          case "Finish":
               Debug.Log("Congrats finish");
               break;
             case "Fuel":
               Debug.Log("Picked Fuel");
               break;
             default:
-              Debug.Log("Sorry you blew up!");
+              ReloadLevel();
               break;
         }
+    }
+
+    private void ReloadLevel()
+    {
+      int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+      SceneManager.LoadScene(currentSceneIndex);
     }
 }
