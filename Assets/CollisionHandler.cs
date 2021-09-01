@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,24 +13,36 @@ public class CollisionHandler : MonoBehaviour
               Debug.Log("This is friendly");
               break;
           case "Finish":
-              NextLevel();
+              StartSuccesSequence();
               break;
             case "Fuel":
               Debug.Log("Picked Fuel");
               break;
             default:
-              ReloadLevel();
+              StartCrashSequence();
               break;
         }
     }
 
-    private void ReloadLevel()
+    void StartSuccesSequence()
+    {
+      GetComponent<Movement>().enabled = false;
+      Invoke("NextLevel", 1f);
+    }
+
+    void StartCrashSequence()
+    {
+      GetComponent<Movement>().enabled = false;
+      Invoke("ReloadLevel", 1f);
+    }
+
+    void ReloadLevel()
     {
       currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
       SceneManager.LoadScene(currentSceneIndex);
     }
 
-    private void NextLevel()
+    void NextLevel()
     {
       currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
       SceneManager.LoadScene(currentSceneIndex+1);
