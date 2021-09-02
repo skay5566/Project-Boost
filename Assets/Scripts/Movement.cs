@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     [SerializeField] float mainThrust = 9001f;
     [SerializeField] float rotationThrust = 1f;
     [SerializeField] AudioClip  engineSound;
+    [SerializeField] ParticleSystem engineParticles;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,9 +32,14 @@ public class Movement : MonoBehaviour
             {
                 audioSource.PlayOneShot(engineSound);
             }
+            if (!engineParticles.isPlaying)
+            {
+                engineParticles.Play();
+            }
             rb.AddRelativeForce(Vector3.up * Time.deltaTime * mainThrust);
         } else {
             audioSource.Stop();
+            engineParticles.Stop();
         }
     }
 
