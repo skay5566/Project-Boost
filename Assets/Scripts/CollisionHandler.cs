@@ -7,6 +7,7 @@ public class CollisionHandler : MonoBehaviour
   AudioSource audioSource;
   int currentSceneIndex;
   bool isTransitioning = false;
+  bool collisionDisable = false;
   [SerializeField] AudioClip  crashSound;
   [SerializeField] AudioClip  finishSound;
   [SerializeField] ParticleSystem finishParticles;
@@ -16,9 +17,26 @@ public class CollisionHandler : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
+
+    void Update()
+    {
+      DebugKeys();
+    }
+
+    void DebugKeys()
+    {
+      if (Input.GetKeyDown(KeyCode.L))
+      {
+        NextLevel();
+      }
+      if (Input.GetKeyDown(KeyCode.C))
+      {
+        collisionDisable = !collisionDisable;
+      }
+    }
   private void OnCollisionEnter(Collision other) 
     {
-      if (isTransitioning) { return; }
+      if (isTransitioning || collisionDisable) { return; }
 
       switch (other.gameObject.tag)
         {

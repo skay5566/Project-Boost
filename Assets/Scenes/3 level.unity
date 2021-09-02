@@ -280,14 +280,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2130390393, guid: ee32a3779f53a3243935dd624b51b5f6, type: 3}
-      propertyPath: mainThrust
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2130390394, guid: ee32a3779f53a3243935dd624b51b5f6, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2437144554767287832, guid: ee32a3779f53a3243935dd624b51b5f6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -634,20 +626,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1db2edf3db7de6a429ae68d2f0743584, type: 3}
---- !u!1 &2130390392 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4923086303673936874, guid: ee32a3779f53a3243935dd624b51b5f6, type: 3}
-  m_PrefabInstance: {fileID: 914556825}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2130390400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2130390392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 761e027371f84274abeb0123edf37ae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
