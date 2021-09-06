@@ -68,7 +68,7 @@ public class CollisionHandler : MonoBehaviour
       audioSource.PlayOneShot(crashSound);
       crashParticles.Play();
       GetComponent<Movement>().enabled = false;
-      Invoke("ReloadLevel", 1f);
+      Invoke("ReloadLevel", 5f);
     }
 
     void ReloadLevel()

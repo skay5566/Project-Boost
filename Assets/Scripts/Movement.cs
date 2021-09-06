@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     [SerializeField] float mainThrust = 9001f;
     [SerializeField] float rotationThrust = 1f;
     [SerializeField] AudioClip  engineSound;
+    [SerializeField] AudioClip  trustersSound;
     [SerializeField] ParticleSystem engineParticles;
     // Start is called before the first frame update
     void Start()
@@ -48,10 +49,18 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             ApplyRotation(rotationThrust);
+             if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(trustersSound);
+            }
         }
         else if (Input.GetKey(KeyCode.D))
         {
             ApplyRotation(-rotationThrust);
+             if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(trustersSound);
+            }
         }
     }
 
