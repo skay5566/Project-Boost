@@ -579,7 +579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveVector: {x: 10, y: 0, z: 0}
-  period: 4.3
+  period: 7.62
 --- !u!1001 &1714737824
 PrefabInstance:
   m_ObjectHideFlags: 0
